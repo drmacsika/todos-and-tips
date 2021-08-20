@@ -1,0 +1,762 @@
+------------------------------> Tips for Git <------------------------------
+
+To push from a to master on git
+<---------------------------------------->
+git push origin master
+<---------------------------------------->
+
+To push from a branch to master on git
+<---------------------------------------->
+git push origin develop:master
+$ git push <remote> <local branch name>:<remote branch to push into>
+<---------------------------------------->
+
+
+To push from a branch to master on git, if you don't want to specify the name
+<---------------------------------------->
+git push origin HEAD:master
+<---------------------------------------->
+
+
+OR a more mature way to do it
+<---------------------------------------->
+git checkout master
+git pull               # to update the state to the latest remote master state
+git merge develop      # to bring changes to local master from your develop branch
+git push origin master # push current HEAD to remote master branch
+<---------------------------------------->
+
+
+To push to a repo without overwriting the master, do this:
+<---------------------------------------->
+git clone                   //clone what branch you want
+git checkout -b new_branch  //this will create a new local branch
+git push origin new_branch  //this will create a new origin branch
+
+initialize a git repository:
+<---------------------------------------->
+git init
+<---------------------------------------->
+
+Check the status of the repository:
+<---------------------------------------->
+git status
+<---------------------------------------->
+
+Add all untracked files within the current directory.
+<---------------------------------------->
+git add .
+<---------------------------------------->
+
+Make a commmit
+<---------------------------------------->
+git commit -m "Initial commit"
+<---------------------------------------->
+
+View git branch
+<---------------------------------------->
+git branch
+<---------------------------------------->
+
+Add a new remote url origin
+<---------------------------------------->
+git remote add origin https://github.com/drmacsika/django-social-network.git
+<---------------------------------------->
+
+Set a new remote url origin
+<---------------------------------------->
+git remote set-url origin https://github.com/drmacsika/django-social-network.git
+<---------------------------------------->
+
+Remove remote origin from Git repo
+<---------------------------------------->
+git remote remove origin
+<---------------------------------------->
+
+Make a new git branch
+<---------------------------------------->
+git checkout -b <new-branch>
+git checkout -b <new-branch> <existing-branch>
+<---------------------------------------->
+
+Steps for a new local repository on gitlab
+<---------------------------------------->
+rm -rf .git //delete the git folder from an account
+git config --global user.name "Macsika" //sets the global username
+git config --global user.name //views the global username
+git config --global user.email "drmacsika@gmail.com" //sets the global email
+git config --global user.email //views the global email
+git config --global --list //views all the global parameters
+git init //initializes a new git repository
+git checkout master //creates the master branch and selects the master branch to be worked on
+git remote -v // checks the current remote version
+git remote add origin https://gitlab.com/Macsika/belroyale // adds a new origin to the git repo project created on gitlab
+git remote -v // checks the current remote version
+git checkout -b NAME-OF-BRANCH(e.g master) //creates the master branch if it doesn't already exists
+git checkout NAME-OF-BRANCH(e.g master) //selects the branch to be worked on
+git status
+git add .
+git commit -m "COMMENT TO DESCRIBE THE INTENTION OF THE COMMIT"
+git push origin master
+<---------------------------------------->
+
+Switch branches
+<---------------------------------------->
+git checkout <branchname>
+<---------------------------------------->
+
+Add untracked files
+<---------------------------------------->
+git rm -r --cached .
+git add .
+<---------------------------------------->
+
+
+
+Add from tested or master to development and development to tested
+<---------------------------------------->
+git checkout tested
+git push origin tested:developments
+<---------------------------------------->
+
+
+Add from tested/developments to master
+<---------------------------------------->
+git checkout master
+git pull               # to update the state to the latest remote master state
+git merge tested/developments      # to bring changes to local master from your develop branch
+git status (optional)
+git add .
+git commit -m "commit message"
+git push origin master
+<---------------------------------------->
+
+To reset the git pull/commit if a fle is deleted
+<---------------------------------------->
+git reset --hard HEAD~1
+<---------------------------------------->
+
+undo you last commit
+<---------------------------------------->
+git checkout HEAD~1
+<---------------------------------------->
+
+Lookup all last changes
+<---------------------------------------->
+git log
+<---------------------------------------->
+
+view all git remote
+<---------------------------------------->
+git remote
+<---------------------------------------->
+
+To reset
+<---------------------------------------->
+git log
+git reset <commit-code> --hard e.g git reset 3f8920aabba1db78130c8ef79450470495b3f05d --hard
+<---------------------------------------->
+
+
+
+<---------------------------------------->
+<---------------------------------------->
+Steps for GIT Push and Pull Request from a different repository
+<---------------------------------------->
+<---------------------------------------->
+
+
+Fork the repository: This will create an instance of that entire repository in your account.
+<---------------------------------------->
+Do this by going to the project itself
+<---------------------------------------->
+
+
+
+
+
+
+------------------------------> Tips for heroku <------------------------------
+
+start heroku bash
+<---------------------------------------->
+heroku run bash
+<---------------------------------------->
+
+exit heroku bash
+<---------------------------------------->
+exit;
+<---------------------------------------->
+
+Migrate database changes on heroku
+<---------------------------------------->
+heroku run python manage.py migrate
+<---------------------------------------->
+
+Git push to heroku master branch
+<---------------------------------------->
+git push heroku master
+<---------------------------------------->
+
+Login to heroku
+<---------------------------------------->
+heroku login
+<---------------------------------------->
+
+run the app
+<---------------------------------------->
+heroku open
+<---------------------------------------->
+
+Reset heroku database
+<---------------------------------------->
+heroku pg:reset DATABASE_URL
+<---------------------------------------->
+
+Running heroku locally
+<---------------------------------------->
+heroku local -p 8000
+<---------------------------------------->
+
+Format all delete entire heroku repository
+<---------------------------------------->
+https://stackoverflow.com/questions/10451330/clean-git-repo-on-heroku
+<---------------------------------------->
+
+Please note the path to the SASS Dart SDK:
+<---------------------------------------->
+  /usr/local/opt/dart/libexec
+<---------------------------------------->
+#
+Notes when converting front theme color in css
+<---------------------------------------->
+#377dff --> #f16334
+#c7dbff --> #fad0b7
+#0052ea --> #f16310
+#97bbff --> #f8b6a0
+#aecbff --> #f8c0a0
+#1164ff --> #f16320
+#045cff --> #f16315
+#0056f6 --> #ee4811
+#1d4185 --> #bf3a0d
+#142d5b --> #772409
+#196EFF --> #f05a17
+#19A0FF --> #ff751a
+#1919CC --> #d7410f
+#1818EF --> #ee4819
+rgb(55, 125, 255) --> rgb(241, 99, 52)
+rgb(55,125,255) --> rgb(241, 99, 52)
+rgba(85,145,255, 0.5) --> rgba(241, 99, 52, 0.5)
+rgba(85, 145, 255, 0.5) --> rgba(241, 99, 52, 0.5)
+<---------------------------------------->
+
+Email to create
+<---------------------------------------->
+careers@sikademy.com
+info@sikademy.com
+support@sikademy.com
+tutorials@sikademy.com
+services@sikademy.com
+<---------------------------------------->
+
+Sikademy Apps that uses emails
+<---------------------------------------->
+Accounts
+Careers
+Contact
+Request
+Services
+<---------------------------------------->
+
+Create runtime and update requirements
+After changing the python version in runtime.txt
+update the requirements.txt using the command below
+<---------------------------------------->
+pip freeze > requirements.txt
+<---------------------------------------->
+
+Image Dimension/Sicd ze for blog post is
+<---------------------------------------->
+460 x 277
+<---------------------------------------->
+
+Image Dimension/Size for exams is
+<---------------------------------------->
+320 x 320
+<---------------------------------------->
+
+Image Dimension/Size for exams subject
+background is
+<---------------------------------------->
+375 x 360
+<---------------------------------------->
+
+Test prep category
+<---------------------------------------->
+https://en.wikipedia.org/wiki/List_of_admission_tests_to_colleges_and_universities
+
+
+HTML Multiple Choice Questions | MCQs | Quiz
+Practice HTML questions and answers for interviews, campus placements, online tests, aptitude tests, quizzes and competitive exams.
+
+
+
+For test-prep
+test-prep home will be a page of it's own with list of available exams to prepare for.
+
+Make each test an app, give it a full page design get an example from stack overflow SAT. show a get started button at the top that does a go to to
+the down part of the page. At the part we'll have a list of years or prep type type. on clicking the year, it takes you to the question subject one and list of other subjects at the side bar.
+<---------------------------------------->
+
+Backing up model data
+<---------------------------------------->
+python manage.py dumpdata exams --indent 4 > zmodels_data_backup/exams.json
+python manage.py dumpdata skills --indent 4 > zmodels_data_backup/skills.json
+python manage.py dumpdata tutorials --indent 4 > zmodels_data_backup/tutorials.json
+<---------------------------------------->
+
+uploading model data to heroku
+<---------------------------------------->
+heroku run python manage.py loaddata zmodels_data_backup/exams.json
+<---------------------------------------->
+
+AWS - Create the environment
+<---------------------------------------->
+eb create
+<---------------------------------------->
+
+AWS - Deploy a code
+<---------------------------------------->
+After adding and commiting with git
+eb deploy
+<---------------------------------------->
+
+AWS - Open up your default browser and navigate to the Elastic Beanstalk console
+<---------------------------------------->
+eb console
+<---------------------------------------->
+
+AWS - Check the logs for details
+<---------------------------------------->
+eb logs
+<---------------------------------------->
+
+AWS - This will open a browser window using the domain name created for your application.
+<---------------------------------------->
+eb open
+<---------------------------------------->
+
+
+AWS - Find the domain name and other info of your new environment
+<---------------------------------------->
+eb status
+<---------------------------------------->
+
+
+AWS - Using environment-specific configuration settings
+<---------------------------------------->
+
+<---------------------------------------->
+
+
+Heroku CNAME for Sikademy.com
+<---------------------------------------->
+www.sikademy.com - reticulated-sailfish-0kqhdjmy9mr7hf4e2ca94nk7.herokudns.com
+sikademy.com - arcane-rosemallows-x7icidriykg25nwz1j9s569k.herokudns.com
+<---------------------------------------->
+
+Third Party Authentication
+<---------------------------------------->
+Facebook
+https://developers.facebook.com/apps/849241438782091/settings/basic/
+
+Google
+https://console.developers.google.com/apis/dashboard?project=macsika-sikademy&supportedpurview=project
+<---------------------------------------->
+
+
+Dumping and loading database data
+<---------------------------------------->
+python manage.py dumpdata blog --indent 2 > zmb/blog.json
+python manage.py dumpdata blog.category --indent 2 > zmb/blog.json
+python manage.py dumpdata blog > zmb/blog.json
+python manage.py dumpdata tutorials > zmb/tutorials.json
+python manage.py loaddata zmb/blog.json
+python manage.py loaddata zmb/tutorials.json
+python manage.py dumpdata --exclude=contenttypes --exclude=auth.Permission > initial_data.json
+
+$ python manage.py shell
+>>>execfile("clean_model_app_remove.py")
+from django.db import models
+from blog.models import Post
+Post.objects.all().delete()
+
+https://docs.djangoproject.com/en/dev/ref/django-admin/
+<---------------------------------------->
+
+
+
+Colors for the salon
+<---------------------------------------->
+Name: Pastel Red
+Hex: #FE6666
+RGB: (254, 102, 102)
+CMYK: 0, 0.598, 0.598, 0.003
+
+
+Name: Light Salmon Pink
+Hex: #FF9999
+RGB: (255, 153, 153)
+CMYK: 0, 0.4, 0.4, 0
+
+Name: Apricot
+HSV (h, s, v): (24°, 30%, 98%)
+SRGBB (r, g, b): (251, 206, 177)
+Hex triplet: #FBCEB1
+#ECBEA7
+<---------------------------------------->
+
+Install and setup pyenv
+<---------------------------------------->
+brew install pyenv
+cd ~/
+echo 'eval "$(pyenv init -)"' >> .bash_profile
+brew install zlib sqlite
+export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/sqlite/lib"
+export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/sqlite/include"
+<---------------------------------------->
+
+Install new python version with pyenv
+<---------------------------------------->
+pyenv install 3.5.
+pyenv global 3.7.3 // depending on the version you want to make global
+<---------------------------------------->
+
+List installed pyenv versions
+<---------------------------------------->
+pyenv versions
+<---------------------------------------->
+
+Troubleshoot issue with installing new python versions with pyenv
+<---------------------------------------->
+CFLAGS="-I$(brew --prefix readline)/include -I$(brew --prefix openssl)/include -I$(xcrun --show-sdk-path)/usr/include" \
+LDFLAGS="-L$(brew --prefix readline)/lib -L$(brew --prefix openssl)/lib" \
+PYTHON_CONFIGURE_OPTS=--enable-unicode=ucs2 \
+pyenv install -v 2.7.11
+
+Execute 'python -V' using pyenv version
+<---------------------------------------->
+pyenv exec python -V
+<---------------------------------------->
+
+Create a new environment named venv, install Python 3.6.12:
+<---------------------------------------->
+--without python
+conda create --name venv
+--with python
+conda create --name venv python=3.6.12
+<---------------------------------------->
+
+Manage different versions of python on mac without conda
+<---------------------------------------->
+brew install pyenv
+<---------------------------------------->
+
+Activate and use the Python 3 environment.
+<---------------------------------------->
+conda activate venv
+or conda activate base (for the base environment)
+<---------------------------------------->
+
+
+Deactivate the Python 3 environment conda
+<---------------------------------------->
+conda deactivate
+<---------------------------------------->
+
+
+To see if a specific package, such as SciPy, is available for installation:
+<---------------------------------------->
+conda search scipy
+<---------------------------------------->
+
+
+To see if a specific package, such as SciPy, is available for installation from Anaconda.org:
+<---------------------------------------->
+conda search --override-channels --channel defaults scipy
+<---------------------------------------->
+
+
+To see if a specific package, such as iminuit, exists in a specific channel, such as http://conda.anaconda.org/mutirri, and is available for installation:
+<---------------------------------------->
+conda search --override-channels --channel http://conda.anaconda.org/mutirri iminuit
+<---------------------------------------->
+
+
+To install a specific package such as SciPy into an existing environment "myenv":
+<---------------------------------------->
+conda install --name myenv scipy
+<---------------------------------------->
+
+
+If you do not specify the environment name, which in this example is done by --name myenv, the package installs into the current environment:
+<---------------------------------------->
+conda install scipy
+<---------------------------------------->
+
+
+To install a specific version of a package such as SciPy:
+<---------------------------------------->
+conda install scipy=0.15.0
+<---------------------------------------->
+
+
+To install multiple packages at once, such as SciPy and cURL:
+<---------------------------------------->
+conda install scipy curl
+<---------------------------------------->
+
+
+To install multiple packages at once and specify the version of the package:
+<---------------------------------------->
+conda install scipy=0.15.0 curl=7.26.0
+<---------------------------------------->
+
+
+To install a package for a specific Python version:
+<---------------------------------------->
+conda install scipy=0.15.0 curl=7.26.0 -n py34_env
+<---------------------------------------->
+
+
+You can install a package from a specific channel into the currently activate environment by passing the --channel option to the conda install command as follows.
+<---------------------------------------->
+conda install scipy=1.3 --channel conda-forge
+<---------------------------------------->
+
+
+You can also install a package from a specific channel into a named environment (using --name) or into an environment installed at a particular prefix (using --prefix). For example, the following command installs the scipy package from the conda-forge channel into the environment called my-first-conda-env which we created earlier.
+<---------------------------------------->
+conda install scipy=1.3 --channel conda-forge --name my-first-conda-env
+<---------------------------------------->
+
+
+You may specify multiple channels for installing packages by passing the --channel argument multiple times.
+<---------------------------------------->
+$ conda install scipy=1.3 --channel conda-forge --channel bioconda
+<---------------------------------------->
+
+
+To check that the package is installed, in your terminal window or an Anaconda Prompt, run:
+<---------------------------------------->
+conda list
+<---------------------------------------->
+
+
+To update a specific package:
+<---------------------------------------->
+conda update biopython
+<---------------------------------------->
+
+
+To update Python:
+<---------------------------------------->
+conda update python
+<---------------------------------------->
+
+
+To update conda itself:
+<---------------------------------------->
+conda update conda
+<---------------------------------------->
+
+
+To update the Anaconda metapackage:
+<---------------------------------------->
+conda update conda
+conda update anaconda
+<---------------------------------------->
+
+
+To remove a package such as SciPy in an environment such as myenv:
+<---------------------------------------->
+conda remove -n myenv scipy
+<---------------------------------------->
+
+
+To remove a package such as SciPy in the current environment:
+<---------------------------------------->
+conda remove scipy
+<---------------------------------------->
+
+
+To remove multiple packages at once, such as SciPy and cURL:
+<---------------------------------------->
+conda remove scipy curl
+<---------------------------------------->
+
+
+# Create a new Django project and a new app
+
+Create the project directory
+<---------------------------------------->
+mkdir projectname
+cd projectname
+<---------------------------------------->
+
+Create a virtual environment to isolate our package dependencies locally (Use conda stated above)
+<---------------------------------------->
+python3 -m venv venv, python3 -m venv venvname  'or'
+virtualenv -p python3 .   'or use conda to already handle and skip this step'
+source env/bin/activate  # On Windows use `env\Scripts\activate`
+<---------------------------------------->
+
+Install Django and Django REST framework into the virtual environment
+<---------------------------------------->
+pip install django
+pip install djangorestframework
+<---------------------------------------->
+
+Set up a new project with a single application
+<---------------------------------------->
+mkdir src && cd src
+mkdir src
+cd src
+django-admin startproject projectname .  # Note the trailing '.' character
+
+Set up a new app appname
+<---------------------------------------->
+django-admin startapp appname 'or'
+python manage.py startapp appname
+cd ..
+<---------------------------------------->
+
+Now sync your database for the first time:
+<---------------------------------------->
+python manage.py migrate
+<---------------------------------------->
+
+Create an initial user named admin with a password of password123.
+<---------------------------------------->
+python manage.py createsuperuser --email admin@example.com --username admin
+<---------------------------------------->
+
+
+
+
+React and Django App
+Install django requirements in a conda environment
+<---------------------------------------->
+conda install pip
+pip install -r requirements.txt
+<---------------------------------------->
+
+Save the package info to a requirements.txt.file
+<---------------------------------------->
+conda list -e > requirements.txt
+<---------------------------------------->
+
+Install the requirements.txt file into a new project environment.
+<---------------------------------------->
+conda install -n <env_name> requirements.txt
+<---------------------------------------->
+
+
+
+
+Install react requirements
+<---------------------------------------->
+install -r requirements.txt
+<---------------------------------------->
+
+
+How mutation works
+<---------------------------------------->
+# class mutationName(graphene.mutation):
+#       class Arguments:
+#     . . .
+#   what_were_returning = graphene.Field(SomeType)
+#   def mutate(self, info, args ...):
+#     . . .
+#     return mutationName(what_were_returning)
+<---------------------------------------->
+
+
+Difference between Model() and Model.objects.create()
+<---------------------------------------->
+https://stackoverflow.com/questions/26672077/django-model-vs-model-objects-create
+<---------------------------------------->
+
+
+GraphQL Query
+<---------------------------------------->
+---------------
+Query all books
+---------------
+query {
+  allBooks {
+    id
+    title
+    author
+    yearPublished
+    review
+  }
+}
+-------------------
+Query specific book
+-------------------
+query {
+  book(bookId: 2) {
+    id
+    title
+    author
+  }
+}
+--------------------
+Create new book item
+--------------------
+mutation createMutation {
+  createBook(bookData: {title: "Things Apart", author: "Chinua Achebe", yearPublished: "1985", review: 3}) {
+    book {
+      title,
+      author,
+      yearPublished,
+      review
+    }
+  }
+}
+---------------
+Update a book
+---------------
+mutation updateMutation {
+  updateBook(bookData: {id: 6, title: "Things Fall Apart", author: "Chinua Achebe", yearPublished: "1958", review: 5}) {
+    book {
+      title,
+      author,
+      yearPublished,
+      review
+    }
+  }
+}
+--------------
+Delete a book
+--------------
+mutation deleteMutation{
+  deleteBook(id: 6) {
+    book {
+      id
+    } 
+  }
+}
+
+--------
+Tips
+--------
+- Automatic fields from the models like id, created, and updated fields are auto updated even if they are added to grapghql query field or not
+- When a query fails, it is not added to mutation i.e not created or updated
+- setting id does not work and the model will ignore the value and auto update
+- Omitting any mutated field causes and error during mutation creation
+- No need to add auto generated field to mutation
+- Omitting the id during an update in mutation causes and error
+- Omitting a compulsory field during an update in mutation causes an error
+<---------------------------------------->

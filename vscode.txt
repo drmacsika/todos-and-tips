@@ -1,0 +1,12 @@
+Tips for VScode
+
+--------------
+Unindent
+--------------
+Shift + tab
+
+--------------
+Select and edit multiple
+--------------
+Click in front of the word
+command + d

@@ -1,0 +1,13 @@
+Basic terminal commands
+<---------------------------------------->
+To edit a file
+$HOME => /Users/Macsika
+$HOME/folder_name => /Users/Macsika/folder_name
+
+To edit a file using VScode
+sudo code $HOME/.bash_profile
+sudo code $HOME/.profile 
+sudo code $HOME/.zshrc
+
+NVM - Commands library
+https://www.loginradius.com/blog/async/run-multiple-nodejs-version-on-the-same-machine/

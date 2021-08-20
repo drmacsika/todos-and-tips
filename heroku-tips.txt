@@ -1,0 +1,51 @@
+------------------------------> Tips for heroku <------------------------------
+
+start heroku bash
+<---------------------------------------->
+heroku run bash
+<---------------------------------------->
+
+exit heroku bash
+<---------------------------------------->
+exit;
+<---------------------------------------->
+
+Migrate database changes on heroku
+<---------------------------------------->
+heroku run python manage.py migrate
+<---------------------------------------->
+
+Git push to heroku master branch
+<---------------------------------------->
+git push heroku master
+<---------------------------------------->
+
+Login to heroku
+<---------------------------------------->
+heroku login
+<---------------------------------------->
+
+run the app
+<---------------------------------------->
+heroku open
+<---------------------------------------->
+
+Reset heroku database
+<---------------------------------------->
+heroku pg:reset DATABASE_URL
+<---------------------------------------->
+
+Running heroku locally
+<---------------------------------------->
+heroku local -p 8000
+<---------------------------------------->
+
+Format all delete entire heroku repository
+<---------------------------------------->
+https://stackoverflow.com/questions/10451330/clean-git-repo-on-heroku
+<---------------------------------------->
+
+uploading model data to heroku
+<---------------------------------------->
+heroku run python manage.py loaddata zmodels_data_backup/exams.json
+<---------------------------------------->

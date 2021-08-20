@@ -1,0 +1,33 @@
+
+Install and setup pyenv
+<---------------------------------------->
+brew install pyenv
+cd ~/
+echo 'eval "$(pyenv init -)"' >> .bash_profile
+brew install zlib sqlite
+export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/sqlite/lib"
+export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/sqlite/include"
+<---------------------------------------->
+
+Install new python version with pyenv
+<---------------------------------------->
+pyenv install 3.5.
+pyenv global 3.7.3 // depending on the version you want to make global
+<---------------------------------------->
+
+List installed pyenv versions
+<---------------------------------------->
+pyenv versions
+<---------------------------------------->
+
+Troubleshoot issue with installing new python versions with pyenv
+<---------------------------------------->
+CFLAGS="-I$(brew --prefix readline)/include -I$(brew --prefix openssl)/include -I$(xcrun --show-sdk-path)/usr/include" \
+LDFLAGS="-L$(brew --prefix readline)/lib -L$(brew --prefix openssl)/lib" \
+PYTHON_CONFIGURE_OPTS=--enable-unicode=ucs2 \
+pyenv install -v 2.7.11
+
+Execute 'python -V' using pyenv version
+<---------------------------------------->
+pyenv exec python -V
+<---------------------------------------->

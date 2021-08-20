@@ -1,0 +1,36 @@
+
+AWS - Create the environment
+<---------------------------------------->
+eb create
+<---------------------------------------->
+
+AWS - Deploy a code
+<---------------------------------------->
+After adding and commiting with git
+eb deploy
+<---------------------------------------->
+
+AWS - Open up your default browser and navigate to the Elastic Beanstalk console
+<---------------------------------------->
+eb console
+<---------------------------------------->
+
+AWS - Check the logs for details
+<---------------------------------------->
+eb logs
+<---------------------------------------->
+
+AWS - This will open a browser window using the domain name created for your application.
+<---------------------------------------->
+eb open
+<---------------------------------------->
+
+
+AWS - Find the domain name and other info of your new environment
+<---------------------------------------->
+eb status
+<---------------------------------------->
+
+
+AWS - Using environment-specific configuration settings
+<---------------------------------------->

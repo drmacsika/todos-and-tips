@@ -1,0 +1,300 @@
+------------------------------> Tips for Git <------------------------------
+
+
+To push from a to master on git
+<---------------------------------------->
+> git remote set-url origin https://username:token@github.com/username/repository.git
+> git remote add origin https://username:token@github.com/username/repository.git
+<---------------------------------------->
+
+To push from a to master on git
+<---------------------------------------->
+git push origin master
+<---------------------------------------->
+
+To push from a branch to master on git
+<---------------------------------------->
+git push origin develop:master
+$ git push <remote> <local branch name>:<remote branch to push into>
+<---------------------------------------->
+
+
+To push from a branch to master on git, if you don't want to specify the name
+<---------------------------------------->
+git push origin HEAD:master
+<---------------------------------------->
+
+
+OR a more mature way to do it
+<---------------------------------------->
+git checkout master
+git pull               # to update the state to the latest remote master state
+git merge develop      # to bring changes to local master from your develop branch
+git push origin master # push current HEAD to remote master branch
+<---------------------------------------->
+
+
+To push to a repo without overwriting the master, do this:
+<---------------------------------------->
+git clone                   //clone what branch you want
+git checkout -b new_branch  //this will create a new local branch
+git push origin new_branch  //this will create a new origin branch
+
+initialize a git repository:
+<---------------------------------------->
+git init
+<---------------------------------------->
+
+Check the status of the repository:
+<---------------------------------------->
+git status
+<---------------------------------------->
+
+Add all untracked files within the current directory.
+<---------------------------------------->
+git add .
+<---------------------------------------->
+
+Make a commmit
+<---------------------------------------->
+git commit -m "Initial commit"
+<---------------------------------------->
+
+View git branch
+<---------------------------------------->
+git branch
+<---------------------------------------->
+
+Make a new git branch
+<---------------------------------------->
+git checkout -b <new-branch>
+git checkout -b <new-branch> <existing-branch>
+<---------------------------------------->
+
+Steps for a new local repository on gitlab
+<---------------------------------------->
+rm -rf .git //delete the git folder from an account
+git config --global user.name "Macsika" //sets the global username
+git config --global user.name //views the global username
+git config --global user.email "drmacsika@gmail.com" //sets the global email
+git config --global user.email //views the global email
+git config --global --list //views all the global parameters
+git init //initializes a new git repository
+git checkout master //creates the master branch and selects the master branch to be worked on
+git remote -v // checks the current remote version
+git remote add origin https://gitlab.com/Macsika/belroyale // adds a new origin to the git repo project created on gitlab
+git remote -v // checks the current remote version
+git checkout -b NAME-OF-BRANCH(e.g master) //creates the master branch if it doesn't already exists
+git checkout NAME-OF-BRANCH(e.g master) //selects the branch to be worked on
+git status
+git add .
+git commit -m "COMMENT TO DESCRIBE THE INTENTION OF THE COMMIT"
+git push origin master
+<---------------------------------------->
+
+Switch branches
+<---------------------------------------->
+git checkout <branchname>
+<---------------------------------------->
+
+
+
+
+
+Add from tested/developments to master
+<---------------------------------------->
+git checkout master
+git pull               # to update the state to the latest remote master state
+git merge tested/developments      # to bring changes to local master from your develop branch
+git status (optional)
+git add .
+git commit -m "commit message"
+git push origin master
+<---------------------------------------->
+
+
+view all git remote
+<---------------------------------------->
+git remote
+<---------------------------------------->
+
+
+------------------------------> Steps for GIT <------------------------------
+------------------------------> Push and Pull Request <------------------------------
+------------------------------> from a different repository <------------------------------
+
+1. Fork the repository: This will create an instance of that entire repository in your account.
+<---------------------------------------->
+Do this by going to the project itself and click the fork button
+<---------------------------------------->
+
+2. Clone the repository: Once the repository is in your account, clone it to your machine to work with it locally.
+<---------------------------------------->
+git clone [HTTPS ADDRESS]
+cd [NAME OF REPOSITORY]
+<---------------------------------------->
+
+3. Create a branch: Branch name should be short and it should reflect the work we’re doing. It’s good practice to create a new branch when working with repositories, whether it’s a small project or contributing to a group's work.
+<---------------------------------------->
+git checkout -b [Branch Name]
+<---------------------------------------->
+
+4. Make changes and commit them
+<---------------------------------------->
+git status
+git add . or git add [FILENAME] [FILENAME] [...]
+git commit -m "Commit message"
+git remote
+ -- if no origin (git remote add origin https://github.com/drmacsika/django-social-network.git)
+ -- if not the required origin (git remote set-url origin https://github.com/drmacsika/django-social-network.git)
+ -- remove old origin (git remote remove origin)
+  -- show old origin (git remote show origin)
+git pull origin [Branch Name]
+
+----->>>>> Working with Vim
+Here’s a list of commands for quitting Vim:
+Esc – switch to command mode
+:w – write out changes that were made
+:q – exit Vim
+:q! – exit Vim and discard any changes
+:wq – saves the changes, and exits Vim
+:x – save the changes made, and exits Vim
+----->>>>>
+
+commit and merge remote repository to local repository by entering message
+git push origin [Branch Name]
+<---------------------------------------->
+
+5. Create pull request
+<---------------------------------------->
+- Go to your repository on GitHub and you’ll see a button “Compare & pull request” and click it
+- Please provide necessary details on what you’ve done (You can reference issues using “#”). Now submit the pull request.
+<---------------------------------------->
+
+6. Sync your forked master branch - Before submitting any pull requests to the original repository you have to sync your repository to the original one.
+<---------------------------------------->
+git branch (It’ll list all branches and indicates the current or active branch in green.)
+git checkout master
+git remote add upstream [HTTPS] (Here, [HTTPS] is the URL that you have to copy from the owner’s repository. e.g https://github.com/drmacsika/django-social-network.git)
+git fetch upstream (Fetch all of the changes from the original repository. Commits to the original repository will be stored in a local branch called upstream/master.)
+git merge upstream/master (Merge the changes from the upstream/master into your local master branch. This will bring your fork’s master branch into sync with the upstream repository without losing your local changes.)
+git push origin master (At this point your local branch is synced to the original repository’s master branch. If you want to update the GitHub repository, you need to push your changes.)
+<---------------------------------------->
+
+
+7. Delete the unnecessary branch
+<---------------------------------------->
+- git branch -d [Branch Name]
+- git push origin --delete [Branch Name]
+<---------------------------------------->
+
+
+
+------------------------------> Steps for GIT <------------------------------
+------------------------------> Push and Pull Request <------------------------------
+------------------------------> from your repository <------------------------------
+
+1. Clone the repository: Once the repository is in your account, clone it to your machine to work with it locally.
+<---------------------------------------->
+git clone [HTTPS ADDRESS]
+cd [NAME OF REPOSITORY]
+<---------------------------------------->
+
+2. Create a branch: Branch name should be short and it should reflect the work we’re doing. It’s good practice to create a new branch when working with repositories, whether it’s a small project or contributing to a group's work.
+<---------------------------------------->
+git checkout -b [Branch Name]
+<---------------------------------------->
+
+3. Make changes and commit them
+<---------------------------------------->
+git status
+git add . or git add [FILENAME] [FILENAME] [...]
+git commit -m "Commit message"
+git remote
+ -- if no origin (git remote add origin https://github.com/drmacsika/django-social-network.git)
+ -- if not the required origin (git remote set-url origin https://github.com/drmacsika/django-social-network.git)
+ -- remove old origin (git remote remove origin)
+ -- show old origin (git remote show origin)
+git push origin [Branch Name]
+<---------------------------------------->
+
+4. Create pull request
+<---------------------------------------->
+- Go to your repository on GitHub and you’ll see a button “Compare & pull request” and click it
+- Please provide necessary details on what you’ve done (You can reference issues using “#”). Now submit the pull request.
+<---------------------------------------->
+
+5. Alternatively, you can do git pull-request in the command line and complete the PULL Request to GitHub
+<---------------------------------------->
+git pull-request
+<---------------------------------------->
+
+6. Open a Pull request
+7. Deleting a Branch after the PULL Request is Merged.
+
+
+Steps provided by GitHub for new repositories
+--------------------
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M master
+git remote add origin https://github.com/drmacsika/ryffable-web-platform.git
+git push -u origin master
+---------------------
+
+
+############----- Github Default README.md -----##########
+
+https://img.shields.io/github/last-commit/drmacsika/Cooking-Recipe-Guide-with-GraphQL-Django?style=plastic
+# JWT-Authentication-with-ReactJS-Redux-and-Django-DRF
+
+Foobar is a Python library for dealing with word pluralization.
+
+## Features
+
+
+## Installation
+
+
+### Backend
+
+
+Use the package manager [pip](https://pip.pypa.io/en/stable/) for installation.
+
+```bash
+- python -m venv venv
+- source venv/bin/activate
+- cd backend/src
+- pip install -r requirements.txt
+```
+
+## Usage
+- python manage.py makemigrations
+- python manage.py migrate
+- python manage.py runserver
+
+
+### Frontend
+
+Use the package manager [npm] or [yarn] for installation.
+
+```bash
+- cd Frontend
+- npm install
+```
+
+## Usage
+npm run dev or yarn start
+
+
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
+
+
+## Additional Info

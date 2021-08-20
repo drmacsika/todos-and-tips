@@ -1,0 +1,163 @@
+Create a new environment named venv, install Python 3.6.12:
+<---------------------------------------->
+--without python
+conda create --name venv
+--with python
+conda create --name venv python=3.6.12
+<---------------------------------------->
+
+Manage different versions of python on mac without conda
+<---------------------------------------->
+brew install pyenv
+<---------------------------------------->
+
+Activate and use the Python 3 environment.
+<---------------------------------------->
+conda activate venv
+or conda activate base (for the base environment)
+<---------------------------------------->
+
+
+Deactivate the Python 3 environment conda
+<---------------------------------------->
+conda deactivate
+<---------------------------------------->
+
+
+To see if a specific package, such as SciPy, is available for installation:
+<---------------------------------------->
+conda search scipy
+<---------------------------------------->
+
+
+To see if a specific package, such as SciPy, is available for installation from Anaconda.org:
+<---------------------------------------->
+conda search --override-channels --channel defaults scipy
+<---------------------------------------->
+
+
+To see if a specific package, such as iminuit, exists in a specific channel, such as http://conda.anaconda.org/mutirri, and is available for installation:
+<---------------------------------------->
+conda search --override-channels --channel http://conda.anaconda.org/mutirri iminuit
+<---------------------------------------->
+
+
+To install a specific package such as SciPy into an existing environment "myenv":
+<---------------------------------------->
+conda install --name myenv scipy
+<---------------------------------------->
+
+
+If you do not specify the environment name, which in this example is done by --name myenv, the package installs into the current environment:
+<---------------------------------------->
+conda install scipy
+<---------------------------------------->
+
+
+To install a specific version of a package such as SciPy:
+<---------------------------------------->
+conda install scipy=0.15.0
+<---------------------------------------->
+
+
+To install multiple packages at once, such as SciPy and cURL:
+<---------------------------------------->
+conda install scipy curl
+<---------------------------------------->
+
+
+To install multiple packages at once and specify the version of the package:
+<---------------------------------------->
+conda install scipy=0.15.0 curl=7.26.0
+<---------------------------------------->
+
+
+To install a package for a specific Python version:
+<---------------------------------------->
+conda install scipy=0.15.0 curl=7.26.0 -n py34_env
+<---------------------------------------->
+
+
+You can install a package from a specific channel into the currently activate environment by passing the --channel option to the conda install command as follows.
+<---------------------------------------->
+conda install scipy=1.3 --channel conda-forge
+<---------------------------------------->
+
+
+You can also install a package from a specific channel into a named environment (using --name) or into an environment installed at a particular prefix (using --prefix). For example, the following command installs the scipy package from the conda-forge channel into the environment called my-first-conda-env which we created earlier.
+<---------------------------------------->
+conda install scipy=1.3 --channel conda-forge --name my-first-conda-env
+<---------------------------------------->
+
+
+You may specify multiple channels for installing packages by passing the --channel argument multiple times.
+<---------------------------------------->
+$ conda install scipy=1.3 --channel conda-forge --channel bioconda
+<---------------------------------------->
+
+
+To check that the package is installed, in your terminal window or an Anaconda Prompt, run:
+<---------------------------------------->
+conda list
+<---------------------------------------->
+
+
+To update a specific package:
+<---------------------------------------->
+conda update biopython
+<---------------------------------------->
+
+
+To update Python:
+<---------------------------------------->
+conda update python
+<---------------------------------------->
+
+
+To update conda itself:
+<---------------------------------------->
+conda update conda
+<---------------------------------------->
+
+
+To update the Anaconda metapackage:
+<---------------------------------------->
+conda update conda
+conda update anaconda
+<---------------------------------------->
+
+
+To remove a package such as SciPy in an environment such as myenv:
+<---------------------------------------->
+conda remove -n myenv scipy
+<---------------------------------------->
+
+
+To remove a package such as SciPy in the current environment:
+<---------------------------------------->
+conda remove scipy
+<---------------------------------------->
+
+
+To remove multiple packages at once, such as SciPy and cURL:
+<---------------------------------------->
+conda remove scipy curl
+<---------------------------------------->
+
+
+React and Django App
+Install django requirements in a conda environment
+<---------------------------------------->
+conda install pip
+pip install -r requirements.txt
+<---------------------------------------->
+
+Save the package info to a requirements.txt.file
+<---------------------------------------->
+conda list -e > requirements.txt
+<---------------------------------------->
+
+Install the requirements.txt file into a new project environment.
+<---------------------------------------->
+conda install -n <env_name> requirements.txt
+<---------------------------------------->
