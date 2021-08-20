@@ -11,3 +11,14 @@ sudo code $HOME/.zshrc
 
 NVM - Commands library
 https://www.loginradius.com/blog/async/run-multiple-nodejs-version-on-the-same-machine/
+
+
+# Custom Aliases
+
+alias latest-node
+alias strapi-node
+alias dev-ryffable
+alias dev-sikademy
+alias dev-macsika
+alias dev-archangelmacsika
+alias black-env

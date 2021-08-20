@@ -216,6 +216,11 @@ git remote
  -- remove old origin (git remote remove origin)
  -- show old origin (git remote show origin)
 git push origin [Branch Name]
+
+git fetch remotename
+git merge remotename/branchname
+git fetch origin
+git merge origin/master
 <---------------------------------------->
 
 4. Create pull request
