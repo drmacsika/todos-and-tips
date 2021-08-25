@@ -1,0 +1,5 @@
+Project Related Guidelines
+<---------------------------------------->
+1. For security and audit purposes, make sure that your changes on Git can be understood by other developers.
+2. It is important when using Git to not alter your local history.
+<---------------------------------------->
