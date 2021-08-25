@@ -3,3 +3,45 @@ Project Related Guidelines
 1. For security and audit purposes, make sure that your changes on Git can be understood by other developers.
 2. It is important when using Git to not alter your local history.
 <---------------------------------------->
+
+
+Version Control Checklist
+<---------------------------------------->
+Here’s a quick version control checklist to use to ensure you’re applying 
+the right version control best practices.
+
+<---------------------------------------->
+Commits
+<---------------------------------------->
+Applying version control best practices to commits is critical. 
+Here’s what you need to consider.
+Have all commits be atomic, complete, consistent, traceable and with a single intent
+Make changes visible through frequent commits
+Consider how you would use the comments in the future
+Review code before committing to the mainline
+Make commits reversible
+
+<---------------------------------------->
+Branching
+<---------------------------------------->
+Applying branching best practices is critical to success. But it can be complicated.
+To reduce the pain (and effort) for your teams, your branching strategy should aim to:
+Optimize productivity.
+Enable parallel development.
+Allow for a set of planned, structured releases.
+Provide a clear promotion path for software changes through production.
+Evolve to accommodate changes that are delivered, perhaps daily.
+Support multiple versions of released software and patches.
+
+<---------------------------------------->
+Security
+<---------------------------------------->
+Security is another critical version control best practice. 
+Your security plan must consider multiple levels.
+Data: encryption at rest and in transit; specific file and file-type access controls.
+Users: authentication and authorization; integration with enterprise tools.
+Branches and streams: partitioning access control according to the intent of a change— development or release.
+Audit trails: immutable history of all changes.
+Threat detection: using data collected to warn of accidental or malicious risks.
+
+<---------------------------------------->
