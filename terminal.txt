@@ -17,8 +17,8 @@ https://www.loginradius.com/blog/async/run-multiple-nodejs-version-on-the-same-m
 
 alias latest-node
 alias strapi-node
-alias dev-ryffable
-alias dev-sikademy
-alias dev-macsika
-alias dev-archangelmacsika
-alias black-env
+alias code-ryffable
+alias code-sikademy
+alias code-macsika
+alias code-archangelmacsika
+alias code-black
