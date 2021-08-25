@@ -1,5 +1,69 @@
 ------------------------------> Tips for Git <------------------------------
 
+Best Practices and Guidelines
+<---------------------------------------->
+0. Never directly push to the master branch.
+1. Branch Frequently, Commit Often
+- use smaller, short-lived branches.
+- do not a large number of changes in a single branch.
+
+2. Make Small, Single-Purpose Commits
+- commit only small sections of code.
+- Each commit should have a single purpose. For example, fixing a bug or adding a new feature.
+- Commit all files that belong to a task in a single operation 
+-- to keep the project consistent at all times.
+- One best practice is to commit changes atomically in version control.
+- All files in a commit are either committed together or not at all.
+- No other user should see partial or incomplete changes.
+- A check-in is similar to a database transaction described by its ACID properties:
+-- Atomic.
+-- Consistent.
+-- Isolated.
+-- Durable.
+
+3. Write Short, Detailed Commit Messages
+- When writing a commit message, start with a short summary of your change.
+- Write your summary in present tense.
+- Limit the subject line to 50 characters
+- Always leave the second line blank. This separates your subject line from the message to ensures only the subject line displays.
+- Think of a commit like a wrapper around a set of changes.
+- Everything inside the wrapper accomplishes one purpose.
+- If you are fixing two separate bugs, there should be two separate commits.
+- A good commit message also references the issue ID(s) 
+-— or even the requirement ID(s) — that the commit addressed (if applicable).
+- Keep in mind that your team members will need to be able to read this message and understand exactly what you have done. Make sure that you provide enough detail to answer:
+-- What changed from the last version?
+-- How did it resolve the issue?
+-- Why did you make the change?
+-- Some bad examples are:
+
+# Examples of bad commit messages
+- Address workitem xxxyyy.
+- Fixed a bug.
+- Refactored X and Y. Added files.
+- Who broke this code?????
+
+# Examples of good commit messages
+- Add search for username in group view.
+- Fix dynamic field init method to show status.
+- Small changes to text editor to enhance user experience.
+
+4. Test Code and Require Reviews
+- If you’re hesitant about your commit passing a build or test, don’t do it. 
+- Bad commits make tracing bugs and resolving conflicts a nightmare.
+- You should test your code often, and commit once.
+- To help protect the quality of your codebase, your code will not only pass a build, but also be reviewed.
+- Pick a code review tool that does not bottleneck development.
+- When code is ready to be checked in, it should launch a code review.
+
+5. Preserve History and Traceability
+- When checking in a change, make sure all affected files and unit tests are included.
+- This is especially important when working between branches.
+- Providing related test cases and files with your commit ensures 
+- that others can use your check-in without breaking their builds. 
+
+<---------------------------------------->
+
 
 To push from a to master on git
 <---------------------------------------->
@@ -7,52 +71,165 @@ To push from a to master on git
 > git remote add origin https://username:token@github.com/username/repository.git
 <---------------------------------------->
 
-To push from a to master on git
-<---------------------------------------->
-git push origin master
-<---------------------------------------->
 
-To push from a branch to master on git
+To get back stuff you accidentally deleted
+To remove some stuff you tried that broke the repo
+To recover after a bad merge
+To go back to a time when things actually worked.
 <---------------------------------------->
-git push origin develop:master
-$ git push <remote> <local branch name>:<remote branch to push into>
-<---------------------------------------->
-
-
-To push from a branch to master on git, if you don't want to specify the name
-<---------------------------------------->
-git push origin HEAD:master
+> git reflog
+# you will see a list of every thing you've
+# done in git, across all branches!
+# each one has an index HEAD@{index}
+# find the one before you broke everything
+> git reset HEAD@{index}
+# magic time machine
 <---------------------------------------->
 
 
-OR a more mature way to do it
+To make a small change after you have committed
+Warning: You should never amend commits that have been pushed up 
+to a public/shared branch! Only amend commits that only exist 
+in your local copy or you're gonna have a bad time.
 <---------------------------------------->
-git checkout master
-git pull               # to update the state to the latest remote master state
-git merge develop      # to bring changes to local master from your develop branch
-git push origin master # push current HEAD to remote master branch
+# make your change
+# or add individual files
+> git add . 
+> git commit --amend --no-edit
+# now your last commit contains that change!
+# WARNING: never amend public commits
+<---------------------------------------->
+
+
+To change a commit message after you have committed
+<---------------------------------------->
+> git commit --amend 
 <---------------------------------------->
 
 
-To push to a repo without overwriting the master, do this:
+Committed something to master that should
+have been on a brand new branch!
 <---------------------------------------->
-git clone                   //clone what branch you want
-git checkout -b new_branch  //this will create a new local branch
-git push origin new_branch  //this will create a new origin branch
-
-initialize a git repository:
-<---------------------------------------->
-git init
-<---------------------------------------->
-
-Check the status of the repository:
-<---------------------------------------->
-git status
+# create a new branch from the current state of master
+> git branch some-new-branch-name
+# remove the last commit from the master branch
+> git reset HEAD~ --hard
+> git checkout some-new-branch-name
+# your commit lives in this branch now :)
 <---------------------------------------->
 
-Add all untracked files within the current directory.
+
+Committed something to the wrong branch!
 <---------------------------------------->
-git add .
+# undo the last commit, but leave the changes available
+> git reset HEAD~ --soft
+> git stash
+# move to the correct branch
+> git checkout name-of-the-correct-branch
+> git stash pop
+> git add . # or add individual files
+> git commit -m "your message here";
+# now your changes are on the correct branch
+
+Alternatively,
+> git checkout name-of-the-correct-branch
+# grab the last commit to master
+> git cherry-pick master
+# delete it from master
+> git checkout master
+> git reset HEAD~ --hard
+<---------------------------------------->
+
+
+To push to a remote branch without
+specifying the name of the branch
+HEAD points to the top of the current branch.
+git can obtain the branch name from that. 
+So it's the same as: git push origin CURRENT_BRANCH_NAME
+<---------------------------------------->
+> git push origin HEAD
+# This is same as above but an extra step
+# If you want to push into the specific remote branch
+> git push origin HEAD:master
+<---------------------------------------->
+
+
+UNDERSTANDING GIT PUSH
+When you run,
+<---------------------------------------->
+> git push origin X:Y
+<---------------------------------------->
+What happens is that you push something locally named X to the remote name Y. 
+HEAD is not really a branch. It is an alias for whatever is currently checked out. 
+A pointer to the commit that you currently have checked out
+Also, if you are in an older place in the revision history? 
+Like you did a checkout of a previous commit?
+If you currently have master checked out,
+<---------------------------------------->
+# then,
+> git push origin HEAD:master
+# is equivalent to
+> git push origin master:master
+# and equivalent to
+> git push origin master
+# and if you've already done
+> git push -u origin master
+# Subsequent push can be:
+> git push
+# This is euivalent to
+<---------------------------------------->
+
+
+To undo a commit from like 5 commits ago!
+Also, you don't have to track down and copy-paste 
+the old file contents into the existing file
+in order to undo changes!
+If you committed a bug, you can undo the 
+commit all in one go with revert
+<---------------------------------------->
+# find the commit you need to undo
+> git log
+# use the arrow keys to scroll up and down in history
+# once you've found your commit, save the hash
+> git revert [saved hash]
+# git will create a new commit that undoes that commit
+# follow prompts to edit the commit message
+# or just save and commit
+<---------------------------------------->
+
+
+
+Added a file I didn't want in the repo
+If all you did was stage the file and you haven't committed it yet, 
+it's as simple as resetting that staged file:
+<---------------------------------------->
+# To remove a single file from the staging area, use
+> git reset HEAD -- <file>
+> git reset HEAD /assets/img/misty-and-pepper.jpg
+
+# To remove a directory from the staging area, use
+> git reset HEAD -- <directoryName>
+
+# To remove every file that has been staged in the current directory
+> git reset HEAD -- .
+
+# resets all files in the project
+> git reset
+
+# If the files have already been committed
+> git branch future-brunch
+> git reset HEAD~ --hard
+> git checkout future-brunch
+<---------------------------------------->
+
+
+To rename a branch
+<---------------------------------------->
+> git branch -m future-brunch feature-branch
+
+# If you've already pushed it to remote
+> git push origin --delete future-brunch
+> git push origin feature-branch
 <---------------------------------------->
 
 Make a commmit
@@ -247,6 +424,11 @@ git branch -M master
 git remote add origin https://github.com/drmacsika/ryffable-web-platform.git
 git push -u origin master
 ---------------------
+
+
+
+
+
 
 
 ############----- Github Default README.md -----##########
