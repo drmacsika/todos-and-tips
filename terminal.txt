@@ -12,6 +12,20 @@ sudo code $HOME/.zshrc
 NVM - Commands library
 https://www.loginradius.com/blog/async/run-multiple-nodejs-version-on-the-same-machine/
 
+Save and quit from vim
+:wq - meaning write and quit is used to 
+
+Quit from vim
+:q - meaning write and quit is used to 
+
+Get a list of all builtin commands
+man builtin
+
+To edit a previous wrong command entered
+fc, edit the command, save and close
+
+To get help in any command
+help command e.g help cd
 
 # Custom Aliases
 

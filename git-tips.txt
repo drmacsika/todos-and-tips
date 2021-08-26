@@ -425,7 +425,16 @@ git remote add origin https://github.com/drmacsika/ryffable-web-platform.git
 git push -u origin master
 ---------------------
 
-
+Keywords to use
+<---------------------------------------->
+LGTM -> Looks great to me
+LGSF -> Looking great so far
+PTAL -> Please take a(nother) look
+Fix #1
+Fixed #1
+resolve #1
+Resolved #1
+<---------------------------------------->
 
 
 
