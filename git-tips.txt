@@ -66,6 +66,8 @@ Best Practices and Guidelines
 - The golden rule of git rebase is to never use it on public branches.
 - So, before you run git rebase, always ask yourself, “Is anyone else looking at this branch?”
 - If the answer is yes, take your hands off the keyboard and start thinking about a non-destructive way to make your changes
+- Never force a push by using the --force flag. This overwrites the remote main branch to match
+- the rebased one from your repository and makes things very confusing for the rest of your team.
 <---------------------------------------->
 
 
