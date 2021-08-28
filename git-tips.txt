@@ -179,7 +179,7 @@ If you currently have master checked out,
 # and equivalent to
 > git push origin master
 # and if you've already done
-> git push -u origin master
+> git push -u origin master or git push --set-upstream-to origin master
 # Subsequent push can be:
 > git push
 # This is euivalent to
