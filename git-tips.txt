@@ -62,6 +62,10 @@ Best Practices and Guidelines
 - Providing related test cases and files with your commit ensures 
 - that others can use your check-in without breaking their builds. 
 
+6. Merge and Rebase
+- The golden rule of git rebase is to never use it on public branches.
+- So, before you run git rebase, always ask yourself, “Is anyone else looking at this branch?”
+- If the answer is yes, take your hands off the keyboard and start thinking about a non-destructive way to make your changes
 <---------------------------------------->
 
 
