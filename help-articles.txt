@@ -2,4 +2,9 @@ Difference between Model() and Model.objects.create()
 <---------------------------------------->
 https://stackoverflow.com/questions/26672077/django-model-vs-model-objects-create
 https://djangostars.com/blog/configuring-django-settings-best-practices/
+https://phoenixnap.com/kb/update-node-js-version#ftoc-heading-5
+https://www.whitesourcesoftware.com/free-developer-tools/blog/update-node-js/
+https://stackoverflow.com/questions/28176590/what-do-double-asterisk-wildcards-mean/28199633
+https://www.digitalocean.com/community/tutorials/how-to-create-custom-types-in-typescript
+https://stackoverflow.com/questions/22501290/using-id-primary-key-of-a-model-as-foreignkey-when-creating-new-model-instance
 <---------------------------------------->

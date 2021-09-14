@@ -12,6 +12,16 @@ sudo code $HOME/.zshrc
 NVM - Commands library
 https://www.loginradius.com/blog/async/run-multiple-nodejs-version-on-the-same-machine/
 
+----->>>>> Working with Vim
+Here’s a list of commands for quitting Vim:
+Esc – switch to command mode
+:w – write out changes that were made
+:q – exit Vim
+:q! – exit Vim and discard any changes
+:wq – saves the changes, and exits Vim
+:x – save the changes made, and exits Vim
+----->>>>>
+
 Save and quit from vim
 :wq - meaning write and quit is used to 
 
@@ -26,6 +36,18 @@ fc, edit the command, save and close
 
 To get help in any command
 help command e.g help cd
+
+<---------------------------------------->
+Upgrade Node version
+<---------------------------------------->
+> nvm install latest
+> latest-node
+
+<---------------------------------------->
+Tailwind Production CSS build
+<---------------------------------------->
+NODE_ENV=production npx tailwindcss -i ./src/tailwind.css -o ./dist/tailwind.css
+
 
 # Custom Aliases
 

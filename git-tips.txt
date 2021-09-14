@@ -232,14 +232,19 @@ To rename a branch
 > git push origin feature-branch
 <---------------------------------------->
 
-Make a commmit
+
+View difference between edited file and the origial one
 <---------------------------------------->
-git commit -m "Initial commit"
+git diff
 <---------------------------------------->
 
-View git branch
+Diff markdown syntax for github docs
 <---------------------------------------->
-git branch
+```diff
+- console.log("Old")
++ console.log("New")
+console.log("Unchanged")
+````
 <---------------------------------------->
 
 Make a new git branch
@@ -247,35 +252,6 @@ Make a new git branch
 git checkout -b <new-branch>
 git checkout -b <new-branch> <existing-branch>
 <---------------------------------------->
-
-Steps for a new local repository on gitlab
-<---------------------------------------->
-rm -rf .git //delete the git folder from an account
-git config --global user.name "Macsika" //sets the global username
-git config --global user.name //views the global username
-git config --global user.email "drmacsika@gmail.com" //sets the global email
-git config --global user.email //views the global email
-git config --global --list //views all the global parameters
-git init //initializes a new git repository
-git checkout master //creates the master branch and selects the master branch to be worked on
-git remote -v // checks the current remote version
-git remote add origin https://gitlab.com/Macsika/belroyale // adds a new origin to the git repo project created on gitlab
-git remote -v // checks the current remote version
-git checkout -b NAME-OF-BRANCH(e.g master) //creates the master branch if it doesn't already exists
-git checkout NAME-OF-BRANCH(e.g master) //selects the branch to be worked on
-git status
-git add .
-git commit -m "COMMENT TO DESCRIBE THE INTENTION OF THE COMMIT"
-git push origin master
-<---------------------------------------->
-
-Switch branches
-<---------------------------------------->
-git checkout <branchname>
-<---------------------------------------->
-
-
-
 
 
 Add from tested/developments to master
@@ -293,6 +269,12 @@ git push origin master
 view all git remote
 <---------------------------------------->
 git remote
+<---------------------------------------->
+
+Roll back a commit to a previous version.
+<---------------------------------------->
+git reset --hard <commit-hash>
+git push -f origin master
 <---------------------------------------->
 
 
@@ -318,6 +300,10 @@ git checkout -b [Branch Name]
 
 4. Make changes and commit them
 <---------------------------------------->
+After making changes,
+switch to master, pull from repository
+switch to the created branch, pull from updater master local repositories
+run the git branch upstream 
 git status
 git add . or git add [FILENAME] [FILENAME] [...]
 git commit -m "Commit message"
@@ -327,19 +313,6 @@ git remote
  -- remove old origin (git remote remove origin)
   -- show old origin (git remote show origin)
 git pull origin [Branch Name]
-
------>>>>> Working with Vim
-Here’s a list of commands for quitting Vim:
-Esc – switch to command mode
-:w – write out changes that were made
-:q – exit Vim
-:q! – exit Vim and discard any changes
-:wq – saves the changes, and exits Vim
-:x – save the changes made, and exits Vim
------>>>>>
-
-commit and merge remote repository to local repository by entering message
-git push origin [Branch Name]
 <---------------------------------------->
 
 5. Create pull request
