@@ -62,6 +62,12 @@ Best Practices and Guidelines
 - Providing related test cases and files with your commit ensures 
 - that others can use your check-in without breaking their builds. 
 
+6. Merge and Rebase
+- The golden rule of git rebase is to never use it on public branches.
+- So, before you run git rebase, always ask yourself, “Is anyone else looking at this branch?”
+- If the answer is yes, take your hands off the keyboard and start thinking about a non-destructive way to make your changes
+- Never force a push by using the --force flag. This overwrites the remote main branch to match
+- the rebased one from your repository and makes things very confusing for the rest of your team.
 <---------------------------------------->
 
 
@@ -173,7 +179,7 @@ If you currently have master checked out,
 # and equivalent to
 > git push origin master
 # and if you've already done
-> git push -u origin master
+> git push -u origin master or git push --set-upstream-to origin master
 # Subsequent push can be:
 > git push
 # This is euivalent to
