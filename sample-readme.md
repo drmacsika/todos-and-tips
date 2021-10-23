@@ -6,6 +6,7 @@ Table of Contents:
 - [Features](#features)
 - [Installation and Usage](#installation)
 - [Contributing](#contributing)
+- [Credits](#credits)
 - [Additional Info](#additional-info)
 
 ## Screenshots
