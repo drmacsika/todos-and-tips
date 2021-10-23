@@ -421,6 +421,7 @@ Resolved #1
 
 ############----- Github Default README.md -----##########
 
+https://embeddedartistry.com/blog/2017/11/27/your-project-is-great-so-lets-make-your-readme-great-too/
 https://img.shields.io/github/last-commit/drmacsika/Cooking-Recipe-Guide-with-GraphQL-Django?style=plastic
 # JWT-Authentication-with-ReactJS-Redux-and-Django-DRF
 

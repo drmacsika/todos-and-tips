@@ -1,0 +1,14 @@
+# initialize Alembic with the async template
+# Currently only supports postgres
+Step 1 - create the models, schema and main appp
+step 2 - configure the database with the declarative base
+install alembic 
+run alembic init -t async migrations # for async setup
+step 3 - create a base file containing all models imported with the declarative base at the top
+step 4: edit the mako script as well as the env.py files
+step 5: Add the database url to the alembic ini file
+run alembic revision --autogenerate -m "init" # Make migrations - Generate the migration
+run alembic upgrade head # Migrate - Apply the migration
+
+Added readings 
+- https://testdriven.io/blog/fastapi-sqlmodel/

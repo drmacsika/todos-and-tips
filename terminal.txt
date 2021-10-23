@@ -43,10 +43,23 @@ Upgrade Node version
 > nvm install latest
 > latest-node
 
+
 <---------------------------------------->
 Tailwind Production CSS build
 <---------------------------------------->
 NODE_ENV=production npx tailwindcss -i ./src/tailwind.css -o ./dist/tailwind.css
+
+
+
+<---------------------------------------->
+Update python 3
+<---------------------------------------->
+brew update //update homebrew
+brew upgrade python3 //upgrade python
+brew cleanup python3 // Remove every old version
+
+
+
 
 
 # Custom Aliases
