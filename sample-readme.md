@@ -1,5 +1,15 @@
 # ASYNC FASTAPI BLOG
 
+Table of Contents:
+- [Screenshots](#screenshots)
+- [Tools](#tools)
+- [Features](#features)
+- [Installation and Usage](#installation)
+- [Contributing](#contributing)
+- [Additional Info](#additional-info)
+
+## Screenshots
+
 This is a set of asynchronous production-ready endpoints tested and built for blogs and portfolio websites.
 
 ![Blog Posts](https://github.com/drmacsika/am-backend/blob/master/templates/Screenshot%202021-10-23%20at%2020.48.16.png)
