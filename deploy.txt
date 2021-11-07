@@ -1,0 +1,99 @@
+Deploy Django Guidelines
+<---------------------------------------->
+0. python manage.py check --deploy
+-- Clean up all unused codes and comments.
+-- Check for localhost links and url declarations
+
+1. Stage Django Project for Production
+- Set up different settings file for different environments
+-- Create a settings folder
+-- Add the file __init__.py to initialize it as a python module.
+-- Create the files base.py, production.py, development.py, ci.py, staging.py
+   to represent the specific environments. Conventionally, the base.py file
+   holds the settings common to all environments while the other files, 
+   import the base and add specific setting for each environments.
+- Set Up different project requirements
+-- Create a requirements folder and separate the requirements 
+   into base.txt, dev.txt and prod.txt depending on need.
+- Configure Production Database
+-- Install psycopg2 and dj-dataase-url
+-- Configure it in the prod settings and update conn max age
+-- Add to prod requirements file.
+- Install dotenv package and Set Up the .env file
+- Generate and serve new secret_key
+- Set Up cache
+- Set up EMAIL_BACKEND and related settings
+- Set Up STATIC_ROOT and STATIC_URL
+- Set Up MEDIA_ROOT and MEDIA_URL
+- Redirect all HTTP traffic to HTTPS
+- Set up HTTPS, enable the following settings.
+-- set CSRF_COOKIE_SECURE = True
+-- set SESSION_COOKIE_SECURE = True 
+-- set SECURE_SSL_REDIRECT to True unless you're using cloudflare as a
+reverse proxy, then turn it off so it can be handled 
+entirely by cloudflare to avoid redirect loops
+- set CONN_MAX_AGE to enable persistent database connections and speed-up site
+- Set Up Error reporting and Logging
+- Set Up ADMINS and MANAGERS
+- Customize the default error views
+-- You may want to override the default templates by creating
+-- the following templates in your root template directory: 
+-- 404.html, 500.html, 403.html, and 400.html.
+-- Run python manage.py check --deploy an ensure there's no error or warning
+
+2. AWS
+- Set Up Console Groups and Users: 
+--- https://console.aws.amazon.com/iam/home#/
+--- Add bucket policies and permisions
+- Set Up AWS SES
+-- Configure SES DNS and verification
+-- Create SES Users and Add to Group
+-- Generate SES Access and Secret keys
+- Set Up AWS S3
+-- Create a bucket and add the nececessary permisions
+-- Create the static and media folders
+-- Add the required python packages to the project django-storages, boto3
+-- Add the required setups and constants of django-storages, boto3
+- Set Up Cloud Front
+-- Add cloud front Urls to settings
+
+3. Set Up Heroku and Deploy
+- This assumes you already have all settings properly configured.
+- Setup heroku account
+- if running the app locally, install postgres db
+- brew install heroku/brew/heroku
+- heroku login
+- heroku git:remote -a APPNAME e.g macsika
+- Define a procfile
+- Run the app locally to test remeber the db set up
+- Disable Collectstatic:
+Collectstatic runs on every push unless you disable it.
+- Add Python Runtime. Create a file called runtime.txt with the contents:
+python-x.x.x, where x are the corresponding verion major, minor and patch numbers.
+- heroku addons:create heroku-postgresql:hobby-dev --app APPNAME e.g macsika
+- nsalaheoudepeecies LOL.
+- Install all heroku dependencies
+- pip install django psycopg2-binary dj-database-url gunicorn
+-- heroku local web
+-- http://localhost:5000 to see the app running locally
+-- stage and commit all files and push using 
+--- git push heroku master
+-- check that everything is working
+--- heroku open
+-- heroku run python manage.py migrate
+-- python manage.py collectstatic
+- https://www.codingforentrepreneurs.com/blog/go-live-with-django-project-and-heroku
+
+00a. Pre Deployment House Keeping
+- Ensure there's no keys in the project settings files or anywheres
+- Check for dead links in project files
+- Add env variables to heroku env
+- Set Up Cloudflare
+
+00b. Post Deployment House Keeping
+- Add site name to django models.
+- set Up Cloudflare
+- If using database-backed sessions, 
+regularly clear old sessions to avoid storing unnecessary data.
+
+<---------------------------------------->
