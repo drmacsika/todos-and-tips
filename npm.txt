@@ -1,0 +1,48 @@
+To check if any module in a project is 'old':
+<---------------------------------------->
+npm outdated
+<---------------------------------------->
+
+
+To update all dependencies, if you are confident this is desirable:
+updates the dependencies both in package.json and package-lock.json
+in accordance to the semantic version rules defined in package.json
+<---------------------------------------->
+npm update 
+<---------------------------------------->
+
+
+To update a single dependency
+<---------------------------------------->
+npm update package_name
+<---------------------------------------->
+
+
+Using npm-check-updates to update packages:
+To check if any module in a project is 'old':
+Running ncu without any flags will print a list of all the outdated packages 
+and the version to which it would update, but will not apply any changes.
+Get a list of updates
+<---------------------------------------->
+npm install -g npm-check-updates
+ncu
+<---------------------------------------->
+
+
+To upgrade package.json
+<---------------------------------------->
+ncu --u
+<---------------------------------------->
+
+
+To update package-lock.json file
+<---------------------------------------->
+npm install
+<---------------------------------------->
+
+
+To update a single dependency
+choose which type of version to list/update.
+<---------------------------------------->
+ncu --target [patch, minor, latest, newest, greatest]
+<---------------------------------------->
