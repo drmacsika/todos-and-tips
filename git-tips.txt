@@ -147,6 +147,70 @@ Alternatively,
 <---------------------------------------->
 
 
+Undo Last Git Commit with reset and preserve changes to the files
+Resets to the previous commit, increment 
+the number to as many pasts commits as desired
+“HEAD~1” means that you want to reset the HEAD (the last commit) 
+to one commit before in the log history.
+the file is still in the index (changes to be committed) 
+but the commit was removed.
+This command will reset it back to the mode 
+after git add giving you two choices.
+This means you can either run "git reset" to undo the add.
+Or run git commit again with a new commit message.
+<---------------------------------------->
+> git reset --soft HEAD~1 # last commit
+> git reset --soft HEAD~2 # last 2 commit
+
+<---------------------------------------->
+
+
+Undo the last Git commit, keep changes in the working directory 
+but NOT in the index
+Resets to the previous commit, increment 
+the number to as many pasts commits as desired
+It moves it to untrack file waiting to be 
+added to the index before committing
+<---------------------------------------->
+> git reset --mixed HEAD~1 # last commit
+> git reset --mixed HEAD~2 # last 2 commit
+<---------------------------------------->
+
+
+
+Undo Last commit with git revert
+The “git revert” command is slightly different from the “git reset” 
+command because it will record a 
+new commit with the changes introducted by reverting the last commit.
+“git reset” sets a new HEAD position 
+while reverting actually reverts the commit specified.
+you will have to commit the changes again for the files to 
+be reverted and for the commit to be undone.
+When executing the “git revert” command, 
+Git will automatically open your text editor in order to commit the changes.
+When you are done with the commit message, a message will be displayed 
+with the new commit hash.
+<---------------------------------------->
+> git revert
+<---------------------------------------->
+
+
+
+Undo Last Git Commit with reset and lose all changes to the files committed
+Resets to the previous commit, increment 
+the number to as many pasts commits as desired
+Be careful when using “–hard” : changes will be 
+removed from the working directory 
+and from the index, you will lose all modifications.
+<---------------------------------------->
+> git reset --hard HEAD~1 # last commit
+> git reset --hard HEAD~2 # last 2 commit
+<---------------------------------------->
+
+
+
+
+
 To push to a remote branch without
 specifying the name of the branch
 HEAD points to the top of the current branch.
@@ -182,7 +246,7 @@ If you currently have master checked out,
 > git push -u origin master or git push --set-upstream-to origin master
 # Subsequent push can be:
 > git push
-# This is euivalent to
+# This is equivalent to
 <---------------------------------------->
 
 
@@ -238,6 +302,13 @@ To rename a branch
 > git push origin feature-branch
 <---------------------------------------->
 
+View pasts commits
+<---------------------------------------->
+> git log # shows the last commits in detail
+> git log --oneline # shows the last commit in single line summary
+> git log --oneline --graph # shows the last commit in single line summary
+
+<---------------------------------------->
 
 View difference between edited file and the origial one
 <---------------------------------------->
