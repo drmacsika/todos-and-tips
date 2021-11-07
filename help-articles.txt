@@ -8,4 +8,6 @@ https://stackoverflow.com/questions/28176590/what-do-double-asterisk-wildcards-m
 https://www.digitalocean.com/community/tutorials/how-to-create-custom-types-in-typescript
 https://stackoverflow.com/questions/22501290/using-id-primary-key-of-a-model-as-foreignkey-when-creating-new-model-instance
 https://embeddedartistry.com/blog/2017/11/27/your-project-is-great-so-lets-make-your-readme-great-too/
+https://devconnected.com/how-to-undo-last-git-commit/
+https://levelup.gitconnected.com/deploy-fastapi-with-hypercorn-http-2-asgi-8cfc304e9e7a
 <---------------------------------------->
