@@ -1,0 +1,7 @@
+How to install react when not installing
+on mac
+<---------------------------------------->
+npm init
+npm install create-react-app
+npx create-react-app myapp
+<---------------------------------------->

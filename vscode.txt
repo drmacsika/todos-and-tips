@@ -10,3 +10,14 @@ Select and edit multiple
 --------------
 Click in front of the word
 command + d
+
+Set the python interpret to the one you want like the latest one
+<---------------------------------------->
+> Select interpreter from the command palette
+> Browse to the interpr path using the path from the command below, 
+select the white file without any link with the exact version written
+e.g the file name for python 3.10 was named python3.10, it may be different for 
+different versions.
+> which python
+
+<---------------------------------------->

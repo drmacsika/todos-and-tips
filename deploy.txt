@@ -16,7 +16,7 @@ Deploy Django Guidelines
 -- Create a requirements folder and separate the requirements 
    into base.txt, dev.txt and prod.txt depending on need.
 - Configure Production Database
--- Install psycopg2 and dj-dataase-url
+-- Install psycopg2 and dj-database-url
 -- Configure it in the prod settings and update conn max age
 -- Add to prod requirements file.
 - Install dotenv package and Set Up the .env file
@@ -48,7 +48,10 @@ entirely by cloudflare to avoid redirect loops
 - Set Up AWS SES
 -- Configure SES DNS and verification
 -- Create SES Users and Add to Group
+-- Set the required Group and user policies otherwise collectstatic won't work
 -- Generate SES Access and Secret keys
+-- Setup SNS to track bounces and complaints
+-- https://appliku.com/post/how-send-email-django-and-ses#setup-sns-to-track-bounces-and-complaints
 - Set Up AWS S3
 -- Create a bucket and add the nececessary permisions
 -- Create the static and media folders

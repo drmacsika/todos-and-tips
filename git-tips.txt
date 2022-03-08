@@ -106,6 +106,10 @@ in your local copy or you're gonna have a bad time.
 # WARNING: never amend public commits
 <---------------------------------------->
 
+To stage/commit only deleted files.
+<---------------------------------------->
+git add `git ls-files --deleted`
+<---------------------------------------->
 
 To change a commit message after you have committed
 <---------------------------------------->

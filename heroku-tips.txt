@@ -10,6 +10,36 @@ exit heroku bash
 exit;
 <---------------------------------------->
 
+List all heroku accounts
+<---------------------------------------->
+heroku accounts
+<---------------------------------------->
+
+Add new account (multiple accounts)
+<---------------------------------------->
+heroku accounts:add account-name
+<---------------------------------------->
+
+Add new account (multiple accounts) SSO
+<---------------------------------------->
+heroku accounts:add work-name --sso
+<---------------------------------------->
+
+Switch account (multiple accounts)
+<---------------------------------------->
+heroku accounts:set account-name
+<---------------------------------------->
+
+Check current account (multiple accounts)
+<---------------------------------------->
+heroku accounts:current
+<---------------------------------------->
+
+Remove an account (multiple accounts)
+<---------------------------------------->
+heroku accounts:remove account-name
+<---------------------------------------->
+
 Migrate database changes on heroku
 <---------------------------------------->
 heroku run python manage.py migrate
@@ -48,4 +78,40 @@ https://stackoverflow.com/questions/10451330/clean-git-repo-on-heroku
 uploading model data to heroku
 <---------------------------------------->
 heroku run python manage.py loaddata zmodels_data_backup/exams.json
+<---------------------------------------->
+
+Running heroku dump data
+<---------------------------------------->
+heroku run python manage.py dumpdata --natural-foreign --exclude=contenttypes --exclude=auth.Permission --exclude=sessions --exclude=accounts --indent 2 > db.json --app sikademy
+<---------------------------------------->
+
+###Resolve connection overload
+
+Check number of connections and other postgres database info.
+<---------------------------------------->
+heroku pg:info
+heroku ps
+
+https://devcenter.heroku.com/articles/python-concurrency-and-database-connections
+https://stackoverflow.com/questions/51211921/upgrade-hobby-dev-to-hobby-basic-on-heroku/51246534#51246534
+
+for solutions to kill all active database connections, use this:
+https://stackoverflow.com/questions/19814740/heroku-postgres-too-many-connections-how-do-i-kill-these-connections
+<---------------------------------------->
+
+Drop all data from a database
+use the name DATABASE_URL as is
+<---------------------------------------->
+heroku pg:reset DATABASE_URL --confirm <appname>
+<---------------------------------------->
+
+Delete the database completely
+<---------------------------------------->
+heroku addons
+heroku addons:destroy postgresql-sinuous-80742 --confirm <appname>
+<---------------------------------------->
+
+Create a new database
+<---------------------------------------->
+heroku addons:create heroku-postgresql:hobby-dev --app <appname>
 <---------------------------------------->

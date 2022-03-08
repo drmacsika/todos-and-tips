@@ -1,0 +1,15 @@
+Start up the redis server
+<---------------------------------------->
+redis-server
+<---------------------------------------->
+
+start up the Redis command-line interface (CLI) 
+in a different terminal window and test that it 
+connects to the Redis server.
+<---------------------------------------->
+redis-cli ping 
+
+You should get pong as an output
+<---------------------------------------->
+
+Redis runs on port 6379 by default

@@ -1,0 +1,35 @@
+Hello,
+
+I apologise about the brief correspondence I sent earlier regarding the request to be taken out of the sandbox.
+
+I would like to request an increase in sending limits of Amazon SES for our website: https://nsikakimoh.com.
+
+We use SES to send emails to users who specifically and voluntarily sign up for an account as well as only to the registered users who voluntarily join our newsletter service or subscribed to our messages.
+
+We do not use Amazon for unsolicited or spammy messaging, not now and not in the future.
+
+The first email any user receives from us will be for a confirmation of a voluntary account creation or newsletter signup.
+
+Subsequent emails will be for transaction confirmation and verification such as a request to reset password. We do not send emails to users who deactivate their account from out site, neither do we send emails to users who unsubscribe from our newsletter.
+
+Our signed up users and email subscribers list are stored in a secured cloud database accessed by two admins. For bounces and complaints, we plan to leverage SNS also offered by Amazon.
+
+This is a sample email we plan to send for account creation:
+
+
+Hello John Doe,
+
+Thank you for joining NsikakImoh.com.
+
+We'd like to confirm that your account was created successfully. To access your portal] click the link below.
+
+[Link/Button]
+
+If you experience any issues logging into your account, reach out to us at [email address].
+
+Best,
+The NsikakImoh team
+
+If you need additional information. I will be happy to provide it.
+
+Thank you for your consideration.

@@ -1,0 +1,15 @@
+------------------------------> GITLAB PROCEDURE <------------------------------
+------------------------------> Push and Pull Request <------------------------------
+------------------------------> from your repository <------------------------------
+
+
+1. To push a new existing folder to a newly created account
+<---------------------------------------->
+git init --initial-branch=main
+git remote add origin https://gitlab.com/valorisoft/vdms-printing-addon.git
+git add .
+git commit -m "Initial commit"
+git push -u origin main
+<---------------------------------------->
+
+https://stackoverflow.com/questions/54571213/how-to-fix-the-project-you-were-looking-for-could-not-be-found-when-using-git
